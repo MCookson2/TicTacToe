@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace TicTacToe
 {
@@ -22,6 +23,7 @@ namespace TicTacToe
                 if (First)
                 {
                     myButton.Content = "X";
+                    myButton.Foreground = Brushes.Red;
                     myButton.IsEnabled = false;
                     First = false;
                     Board[index] = 1;
@@ -37,6 +39,7 @@ namespace TicTacToe
                 else
                 {
                     myButton.Content = "O";
+                    myButton.Foreground = Brushes.Blue;
                     myButton.IsEnabled = false;
                     First = true;
                     Board[index] = 2;
@@ -114,7 +117,7 @@ namespace TicTacToe
 
                 foreach (Button button in buttons)
                 {
-                    button.Content = "";
+                    button.Content = string.Empty;
                     button.IsEnabled = true;
                 }
             }
